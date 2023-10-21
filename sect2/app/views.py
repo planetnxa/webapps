@@ -14,9 +14,9 @@ def index():
 
 #is there a reason
 
-@app.route('/') #known as how to access it via the web page
-def displayFruit():
-    fruits = ["Apple","banana", "pineapple"]
-    return render_template("fruit.html",fruitss=fruits)
+@app.route('/fruit') #known as how to access it via the web page
+def displayFruit(): #but when did we call this function??? like ever
+    fruitsList = ["Apple","banana", "pineapple"]
+    return render_template("fruit_inherit.html",title="bratz",fruitss=fruitsList)
     # because you have a function in the html sect ccalled fruitss, you need to define it here 
     # in this python  document, fruits can ya dig it?
