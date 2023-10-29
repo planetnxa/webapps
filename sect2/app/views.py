@@ -5,6 +5,10 @@ from .forms import CalculatorForm # the name .forms why? full stop wetin?
 @app.route('/calc',methods=["GET","POST"]) #so you can take input??
 def calc():
     form = CalculatorForm()
+    if form.validate_on_submit():
+        flash("valid, the answer is %s"%(form.number1.data+form.number2.data))
+        # why do the numbers stay on refresh....btw flash refers to quickie message....not the adobe ting
+
     return render_template('calculator.html',title="calc",form=form)
     #render temp is the function fi make the site in flask based on the given html
 

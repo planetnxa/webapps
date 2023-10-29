@@ -16,6 +16,20 @@ module=comp2011&year=2022
 ### what is csrf bbaby talk
 go read s4 again
 
-# each flask form has a respective template, is there a directory we can use for this?
+### each flask form has a respective template, is there a directory we can use for this?
 ######
 When the user completes the web form and presses the submit button the browser makes a POST request, in this post request is all the data entered into the form. The data is encoded in the message body. Flask-WTF makes it easy to retrieve the data encoded in the body. The data is automatically decoded and placed in the data attribute or the field attribute of the form class. An example will help. In the file app/views.py modify the calculate method to the following.
+
+### validation is important
+otherwise you hsave security risks....likee the thing might explode if you used the wrong data
+
+client side validation - ensuring all data is entered,, p simple,, server nuh affi check anything. to avoid unvalidated
+
+server side validation is very slow
+
+client side validation:
+
+*input type = "text"*
+
+okay so the app static is for css and the app folder is for the entire thing
+tmp is for database stuff
