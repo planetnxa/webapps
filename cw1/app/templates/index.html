@@ -1,29 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budgeting 101</title>
-</head>
-<body>
-    starting my coursework finally!!
-    <h1>Budgeting 101!</h1>
-    let's get your money right!
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="expenses.html">Edit Expenses</a></li>
-            <li><a href="income.html">Edit Income</a></li>
-            <li><a href="goal.html">Edit Goal</a></li>
-        </ul>
-    </nav>
+{%extends "base.html"%}
+{% block title %} Budgeting 101 | Home {% endblock %}
 
-    <div><h2>Income</h2></div>
+{% block content %} 
 
-    <div><h2>Expenses</h2></div>
+<h1>Budgeting 101!</h1>
+    <p><i>let's get your money right! </i></p>
+<!--note that we need only one curly bracket to do inserts here-->
 
-    <div><h2>Goal</h2>
-    
+<div class="row row-cols-1 row-cols-md-3">
+    <div class="col">
+      <div class="card">
+        <img src="#" class="card-img-top" alt="...">
+        <!--go find some nice images bro-->
+        <div class="card-body">
+          <h5 class="card-title">Income</h5>
+          <p class="card-text">Your total income is 
+            <h2>
+                {% if incVal %}  
+                £{{ incVal }}
+                {%else%}
+                £0
+                {%endif%}
+            </h2>
+          </p>
+        </div>
+      </div>
     </div>
-</body>
-</html>
+    <div class="col">
+      <div class="card">
+        <img src="#" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Expenditure</h5>
+          <p class="card-text">
+            Your total spend is <h2>
+                {% if expVal %}  
+                {{ expVal }}
+                {%else%}
+                XXX
+                {%endif%}
+            </h2>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="#" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Goal</h5>
+            <p class="card-text">
+              Your saving goal is is <h2>
+                {% if goalVal %}  
+                {{ goalVal }}
+                {%else%}
+                XXX
+                {%endif%}
+              </h2>
+              <i> only {% if goalVal %}  
+                {{ goalDiff }}
+                {%else%}
+                XXX
+                {%endif%} to go!</i>
+            </p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

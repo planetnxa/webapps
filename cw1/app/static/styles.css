@@ -1,0 +1,27 @@
+body{
+    background-color: #303030;
+    color: #ffffff;
+    text-align: center;
+}
+
+.navnew{
+    background-color: #fff;
+}
+
+main{
+    padding: 0 10px;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #303030;
+    width: 100%;
+    text-align: center;
+}
+
+.giant{
+    font-size: 100px;
+}
