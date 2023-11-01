@@ -32,4 +32,5 @@ client side validation:
 *input type = "text"*
 
 okay so the app static is for css and the app folder is for the entire thing
-tmp is for database stuff
+tmp is for database 
+still spun on the virtual environment stuff
