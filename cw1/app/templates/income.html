@@ -4,33 +4,26 @@
 {% block content %}
 <h1>Income</h1>
 <table class="table">
-    <thead>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Description</th>
+      <th scope="col">Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for obj in entries %}
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="row">{{obj.id}}</th>
+        <td>{{obj.desc}}</td>
+        <td>{{obj.cost}}</td>
+
       </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+    {% endfor %} 
+  </tbody>
+</table>
+
+  <a href="/addval"><button type="button" class="btn btn-light">Add Income</button></a>
+
 
 {% endblock %}

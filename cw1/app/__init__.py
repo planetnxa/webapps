@@ -1,9 +1,15 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 app = Flask(__name__)
+app.config.from_object('config')
 
-from app import views
+db = SQLAlchemy(app)
 
-#this creates a Flask object then imports view type modules to enable visualisation.
-#so create a Flask object/ application and name it app
-#from the flask application known as app, import the views modules
+migrate = Migrate(app, db)
+
+from app import views, models
+
+#initialising the Flask object and then importing views so we can see the html web visuals
+# the flask object is called app

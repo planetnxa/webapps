@@ -5,9 +5,19 @@
 <h1>Goal</h1>
 
 <div class="giant">
-    {{goalVal}}
+    {% if goalVal>0 %}
+    £{{goalVal}}
+    {% else %}
+    *No goal set*
+    {% endif %}
 </div>
+<a href="/editgoal"><button type="button" class="btn btn-light">Edit Goal</button></a>
+<br>
+<form action="#" method="post">
+    <input type="submit" class="btn btn-dark" value = "Delete Goal" id="delgoal">
+</form>
 
-<p>edit</p>
+
+
 <!--edit button-->
 {% endblock %}

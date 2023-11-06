@@ -9,61 +9,75 @@
 
 <div class="row row-cols-1 row-cols-md-3">
     <div class="col">
-      <div class="card">
-        <img src="#" class="card-img-top" alt="...">
-        <!--go find some nice images bro-->
-        <div class="card-body">
-          <h5 class="card-title">Income</h5>
-          <p class="card-text">Your total income is 
-            <h2>
-                {% if incVal %}  
-                £{{ incVal }}
-                {%else%}
-                £0
-                {%endif%}
-            </h2>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="#" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Expenditure</h5>
-          <p class="card-text">
-            Your total spend is <h2>
-                {% if expVal %}  
-                {{ expVal }}
-                {%else%}
-                XXX
-                {%endif%}
-            </h2>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="#" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Goal</h5>
-            <p class="card-text">
-              Your saving goal is is <h2>
-                {% if goalVal %}  
-                {{ goalVal }}
-                {%else%}
-                XXX
-                {%endif%}
+        <div class="card">      
+          <a href="/income">
+
+          <img src="{{url_for("static",filename="incom.jpg")}}" class="card-img-top resize"></a>
+          <!--go find some nice images bro-->
+          <div class="card-body">
+            <h5 class="card-title">Income</h5>
+            <p class="card-text">Your total income is
+              <h2>
+                  {% if incVal > 0%}
+                  £{{ incVal }}
+                  {%else%}
+                  *No Income*
+                  {%endif%}
               </h2>
-              <i> only {% if goalVal %}  
-                {{ goalDiff }}
-                {%else%}
-                XXX
-                {%endif%} to go!</i>
+              <br>
             </p>
-      </div>
+          </div>
+        </div>
     </div>
+    <div class="col">
+        <div class="card">      
+          <a href="/expenditure">
+          <img src="{{url_for("static",filename="expense.jpg")}}" class="card-img-top resize"></a>
+          <div class="card-body">
+            <h5 class="card-title">Expenditure</h5>
+            <p class="card-text">
+              Your total spend is <h2>
+                  {% if expVal>0 %}
+                  £{{ expVal }}
+                  {%else%}
+                  *No Expenses*
+                  {%endif%}
+              </h2>
+              <br>
+            </p>
+          </div>
+        </div>
+    </div>
+    <div class="col">
+      
+        <div class="card"><a href="/goal">
+          <img src="{{url_for("static",filename="goal.jpg")}}" class="card-img-top resize"></a>
+          <div class="card-body">
+            <h5 class="card-title">Goal</h5>
+              <p class="card-text">
+                Your saving goal is is <h2>
+                  {% if goalVal > 0 %}
+                  £{{ goalVal }}</h2>
+                  {% if goalDiff <0 %}
+                  <i> you did it!!! you made your goal! </i>
+                  {%else%}
+                  <i> only £{{ goalDiff }} to go!</i>
+                      {% endif %}
+                  {% else %}
+                  *No Goal set*
+                  <br><br>
+                  {%endif%}
+                
+                
+              </p>
+        </div>
+            </div>
   </div>
+  </div>
+<br><br>
+ 
+    <h5>Your current balance is: </h5>
+    <h1>£{{balance}}</h1>
+  
 
 {% endblock %}

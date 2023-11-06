@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %} Edit Goal {% endblock %}
+
+{% block content %}
+
+<div>
+    <h1> Edit Goal </h1>
+    
+    <form action="#" method="post" class = "addVals">
+    <h5>Enter your new goal</h5>
+    <input type="number" required name="new_goal" min="0">
+
+    <br><br>
+
+    <input type="submit" class="btn btn-dark">
+    <a href="/"><button type="button" class="btn btn-light">Home</button></a>
+
+    </form>
+</div>
+
+{% endblock %}
