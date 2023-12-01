@@ -7,8 +7,23 @@ from sqlalchemy import func
 
 
 @app.route("/") #the url for us to work with
-def index(): #this index function is called when we open up the website
-        return render_template("index.html")
+def index(): 
+    return render_template("index.html")
 
+@app.route("/portfolio") 
+def portfolio(): 
+    return render_template("portfolio.html")
+
+@app.route("/book-me") 
+def book(): 
+        return render_template("book.html")
+
+@app.route("/shop") 
+def shop(): 
+    return render_template("shop.html")
+
+@app.route("/admin") 
+def admin(): 
+    return render_template("admin.html")
 
     # intialise the other balances and values etc
