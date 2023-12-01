@@ -1,0 +1,8 @@
+{%extends "base.html"%}
+
+{% block title %} NXADESIGNS | Shop {% endblock %}
+
+{% block content %} 
+
+oh you want the hoodie? nice
+{%endblock%}
