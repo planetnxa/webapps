@@ -15,12 +15,13 @@ put html at 100% and body at 100% so that you take up the full page
 this is perfect if you want to put the footer at the actual bottom
 */
 
-.navnew{
-    background-color: #131313;
+.navbar-custom li a, .navbar-brand{
     color: #ffffff;
-}
+    }
+/*read on css editting and how to layer selectors!*/
+
 .navbar a:hover { 
-    color: rgb(255, 66, 158)
+    color: #ff99d4
     !important; }
 
 
@@ -29,6 +30,10 @@ main{
     height: 100%;
 }
 /*so text doesn't hit the ends of the page*/
+.space{
+    margin-bottom:150px ;
+    margin-top: 50px;
+}
 
 footer{
     position: relative  ;
@@ -39,6 +44,7 @@ footer{
     width: 100%;
     text-align: center;
 }
+
 /*very useful footer here*/
 
 .giant{
