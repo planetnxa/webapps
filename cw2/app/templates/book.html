@@ -5,14 +5,26 @@
 {% block content %} 
 
 <h1> BOOK </h1>
+<div class="form">
+<form action="/book-confirmation.html" method="get">
 
-<ul>
-    <li>create form</li>
-    <li>user enters details to send off request</li>
-    <li>enter your name, contact//email//what service you would like</li>
+    Name <br>
+    <input type="text"> <br>
+    Email <br>
+    <input type="email" name="" id="">
     <br>
-    <li>any commetns or concerns</li>
-    <li>final cost, send it off// use stripe</li>
-</ul>
+    Service required? <br>
+    <label for="logo"><input type="checkbox" name="" id="logo">logo - £60 </label><br>
+    <label for="webDes"><input type="checkbox" name="" id="webDes"> web design - £80 </label><br>
+    <label for="brandKit"><input type="checkbox" name="" id="brandKit"> branding kit - £100 </label><br>
+    <label for="cards"><input type="checkbox" name="" id="cards"> business card printing - £50</label><br>
+<br>
+Any comments or concerns? <br><input type="submit" value = "Book Me">
+
+<textarea name="paragraph_text" cols="50" rows="10"></textarea>
+<br>
+</form>
+
+</div>
 
 {%endblock%}
