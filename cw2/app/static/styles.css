@@ -107,3 +107,12 @@ footer{
     text-align: left;
     padding: 30px;
 }
+
+input[type="text"],[type = "email"]{
+    width: 400px;
+}
+
+textarea{
+    width: 400px;
+    height: 200px;
+}
